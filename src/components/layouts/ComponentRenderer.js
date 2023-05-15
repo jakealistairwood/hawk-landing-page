@@ -4,6 +4,7 @@ import { TestComponent } from "~/components/flexible/TestComponent";
 import { TextCard } from "~/components/elements/text/TextCard";
 
 export function ComponentRenderer({ components = [], pageId = null }) {
+	console.log(components)
 	return (
 		<LayoutGroup>
 			{/* <pre>{JSON.stringify(components, null, 4)}</pre> */}
@@ -12,7 +13,7 @@ export function ComponentRenderer({ components = [], pageId = null }) {
 				return (
 					<React.Fragment key={pageId + layoutName + i}>
 						{layoutName === "test_component" && <TestComponent {...layout} />}
-						{layoutName === "text_card" && <TextCard {...layout.text_card} />}
+						{/* {layoutName === "text_card" && <TextCard {...layout.text_card} />} */}
 					</React.Fragment>
 				);
 			})}

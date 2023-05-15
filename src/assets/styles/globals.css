@@ -19,3 +19,16 @@
 	max-width:100%;
 	color:inherit;
 }
+
+.btn-primary {
+	@apply py-4;
+	@apply px-6;
+}
+
+.hero-wrapper .text-card {
+	margin-inline: auto;
+}
+
+p {
+	@apply text-hawk-dark-grey;
+}

@@ -4,6 +4,7 @@ import Header from "~/components/global/Header";
 import Footer from "~/components/global/Footer";
 import WpHotkey from "~/components/elements/WpHotkey";
 import { GlobalContext } from "~/utils/context";
+import LandingPage from "../layouts/LandingPage";
 
 export function Layout({ data, children }) {
 	const [context, setContext] = useState(data);
@@ -14,7 +15,8 @@ export function Layout({ data, children }) {
 			<PasswordProtect password={page?.post_password}>
 				<Seo page={data?.page} />
 				<Header />
-				<main>{children}</main>
+				{/* <main>{children}</main> */}
+				<LandingPage />
 				<Footer />
 				<WpHotkey id={page?.ID} />
 			</PasswordProtect>
