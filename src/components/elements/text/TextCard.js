@@ -1,11 +1,30 @@
 import React from "react";
 import LinkGroup from "~/components/elements/links/LinkGroup";
+import { motion, whileInView } from "framer-motion";
+
+const fadeElementsInUp = {
+	initial: {
+		y: 20,
+		opacity: 0,
+	},
+	animate: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.2,
+			duration: 0.5,
+		},
+	},
+};
 
 export function TextCard({
 	subheading = "",
 	heading = "",
 	content = "",
 	links = [],
+	useMotion,
+	animateInView,
+	customButton,
 	options: {
 		max_width = "",
 		text_alignment = "",
@@ -48,27 +67,67 @@ export function TextCard({
 		sectionAlignmentClasses = "items-end";
 	}
 
+	const { buttonText, classNames } = customButton;
+
 	return (
 		<div className={`flex w-full flex-col ${mobile_section_alignment} ${sectionAlignmentClasses}`}>
-			<div
-				className={`text-card flex flex-col ${flexItemAlignment} ${ySpacing} text-${
-					has_mobile_text_alignment ? mobile_text_alignment : text_alignment
-				} md:text-${text_alignment} md:${max_width}`}
-			>
-				{subheading && (
-					<SubheadingTag className={`text-${subheadingFontSize} w-full ${subheading_classes || ""}`} dangerouslySetInnerHTML={{ __html: subheading }} />
-				)}
-				{heading && (
-					<HeadingTag
-						className={`w-full text-${headingFontSize} ${heading_classes || ""} md:${heading_max_width}`}
-						dangerouslySetInnerHTML={{
-							__html: heading,
-						}}
-					/>
-				)}
-				{content && <div className={`prose w-full ${content_classes || ""} md:${content_max_width || ""}`} dangerouslySetInnerHTML={{ __html: content }} />}
-				{links?.length > 0 && links[0]?.link?.link?.url?.length > 0 && <LinkGroup links={links} className={headingFontSize === "h1" ? "md:pt-4" : "pt-2"} />}
-			</div>
+			{useMotion ? (
+				<motion.div
+					variants={fadeElementsInUp}
+					initial="initial"
+					whileInView={animateInView ? "animate" : null}
+					animate={!animateInView && "animate"}
+					className={`text-card flex flex-col ${flexItemAlignment} ${ySpacing} text-${
+						has_mobile_text_alignment ? mobile_text_alignment : text_alignment
+					} md:text-${text_alignment} md:${max_width}`}
+				>
+					{heading && (
+						<motion.h1
+							variants={fadeElementsInUp}
+							// initial="initial"
+							// whileInView={animateInView ? "animate" : null}
+							// animate={!animateInView && "animate"}
+							className={`w-full text-${headingFontSize} ${heading_classes || ""} md:${heading_max_width}`}
+							dangerouslySetInnerHTML={{
+								__html: heading,
+							}}
+						></motion.h1>
+					)}
+					{content && (
+						<motion.div
+							variants={fadeElementsInUp}
+							// initial="initial"
+							// whileInView={animateInView ? "animate" : null}
+							// animate={!animateInView && "animate"}
+							className={`prose w-full ${content_classes || ""} md:${content_max_width || ""}`}
+							dangerouslySetInnerHTML={{ __html: content }}
+						></motion.div>
+					)}
+					{customButton && <motion.button className={classNames}>
+						<span className="line line--one">{buttonText}</span>
+						<span className="line line--two">{buttonText}</span>
+					</motion.button>}
+					{links?.length > 0 && links[0]?.link?.link?.url?.length > 0 && <LinkGroup links={links} className={headingFontSize === "h1" ? "md:pt-4" : "pt-2"} />}
+				</motion.div>
+			) : (
+				<div
+					className={`text-card flex flex-col ${flexItemAlignment} ${ySpacing} text-${
+						has_mobile_text_alignment ? mobile_text_alignment : text_alignment
+					} md:text-${text_alignment} md:${max_width}`}
+				>
+					{subheading && (
+						<SubheadingTag className={`text-${subheadingFontSize} w-full ${subheading_classes || ""}`} dangerouslySetInnerHTML={{ __html: subheading }} />
+					)}
+					{heading && (
+						<HeadingTag
+							className={`w-full text-${headingFontSize} ${heading_classes || ""} md:${heading_max_width}`}
+							dangerouslySetInnerHTML={{ __html: heading }}
+						/>
+					)}
+					{content && <div className={`prose w-full ${content_classes || ""} md:${content_max_width || ""}`} dangerouslySetInnerHTML={{ __html: content }} />}
+					{links?.length > 0 && links[0]?.link?.link?.url?.length > 0 && <LinkGroup links={links} className={headingFontSize === "h1" ? "md:pt-4" : "pt-2"} />}
+				</div>
+			)}
 		</div>
 	);
 }

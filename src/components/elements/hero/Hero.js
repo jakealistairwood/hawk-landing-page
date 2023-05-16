@@ -7,7 +7,7 @@ const Hero = () => {
     return (
         <header className="hero">
             <div className="container pt-32">
-                <div className="hero-wrapper flex flex-col items-center relative w-4/5 mx-auto">
+                <div className="hero-wrapper flex flex-col items-center relative w-4/5 mx-auto mb-24">
                     <TextCard
                         heading={"One platform powering better information."} 
                         content={"Hawk empowers Public Safety agencies to make mission-critical decisions in real-time."}
@@ -16,11 +16,12 @@ const Hero = () => {
                             section_alignment: "center",
                             heading_tag: 'h1'
                         }}
+                        useMotion={true}
+                        customButton={{
+                            classNames: "bg-hawk-yellow mt-14 mx-auto btn btn-primary w-max",
+                            buttonText: "Get Started"
+                        }}
                         />
-                    <button className="bg-hawk-yellow mt-9 mb-24 btn btn-primary">
-                        <span className="line line--one">Get Started</span>
-                        <span className="line line--two">Get Started</span>
-                    </button>
                     <HeroGlitter className="hero-glitter hero-glitter--left" />
                     <HeroGlitter className="hero-glitter hero-glitter--right" />
                 </div>

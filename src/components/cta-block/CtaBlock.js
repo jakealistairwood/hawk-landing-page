@@ -8,17 +8,19 @@ const CtaBlock = ({ ctaHeader, bgColor }) => {
         <div className="container flex flex-col">
             <TextCard 
                 heading={ctaHeader} 
+                animateInView={true}
+                useMotion={true}
                 options={{
                     text_alignment: "center",
                     section_alignment: "center",
                     heading_tag: 'h2',
-                    heading_classes: "text-center w-full text-white"
+                    heading_classes: "text-center w-full text-hawk-primary"
                 }}  
+                customButton={{
+                    classNames: "bg-hawk-yellow pt-14 mx-auto btn btn-primary w-max",
+                    buttonText: "Get Started"
+                }}
             />
-            <button className="bg-hawk-yellow mt-14 mx-auto btn btn-primary w-max">
-                <span className="line line--one">Get Started</span>
-                <span className="line line--two">Get Started</span>
-            </button>
             <div className="square square--top-left"></div>
             <div className="square square--top-right"></div>
             <div className="square square--bottom-left"></div>
