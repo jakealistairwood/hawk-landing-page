@@ -11,6 +11,7 @@ const Accordian = ({ accordianItem, toggleAccordian }) => {
                 backgroundSize: 'cover',
                 maxWidth: '620px',
                 width: '100%',
+                height: `${accordianItem.isOpen ? "784px" : "0"}`
         }}>
             
         </div>}

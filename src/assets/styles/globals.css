@@ -2,6 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================== 
+	FONT IMPORTS
+===========================================*/
+
+/* Archia */
+
+@font-face {
+	font-family: "Archia";
+	font-weight: 400;
+	src: url("../fonts/archia/Archia-Regular.woff2");
+}
+@font-face {
+	font-family: "Archia";
+	font-weight: 500;
+	src: url("../fonts/archia/Archia-Medium.woff2");
+}
+@font-face {
+	font-family: "Archia";
+	font-weight: 600;
+	src: url("../fonts/archia/Archia-SemiBold.woff2");
+}
+@font-face {
+	font-family: "Archia";
+	font-weight: 700;
+	src: url("../fonts/archia/Archia-Bold.woff2");
+}
+
+/* F37 Bolton  */
+@font-face {
+	font-family: "F37 Bolton";
+	font-weight: 300;
+	src: url("../fonts/f37bolton/F37Bolton-Light.woff2");
+}
+@font-face {
+	font-family: "F37 Bolton";
+	font-weight: 400;
+	src: url("../fonts/f37bolton/F37Bolton-Regular.woff2");
+}
+@font-face {
+	font-family: "F37 Bolton";
+	font-weight: 500;
+	src: url("../fonts/f37bolton/F37Bolton-Medium.woff2");
+}
+@font-face {
+	font-family: "F37 Bolton";
+	font-weight: 700;
+	src: url("../fonts/f37bolton/F37Bolton-Bold.woff2");
+}
+@font-face {
+	font-family: "F37 Bolton";
+	font-weight: 900;
+	src: url("../fonts/f37bolton/F37Bolton-SuperBold.woff2");
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@apply font-archia;
+	@apply font-medium;
+}
+
 .text-h1 {
 	@apply text-6xl;
 }
@@ -15,9 +74,12 @@
 	@apply text-xl;
 }
 
+body {
+	@apply font-f37bolton;
+}
+
 .prose {
 	max-width:100%;
-	color:inherit;
 }
 
 .btn-primary {
@@ -25,10 +87,80 @@
 	@apply px-6;
 }
 
+.btn > div {
+	position: relative;
+}
+
 .hero-wrapper .text-card {
 	margin-inline: auto;
 }
 
+.cta-block .text-card h2 {
+	@apply text-hawk-primary;
+}
+
 p {
 	@apply text-hawk-dark-grey;
+}
+
+.company-mission__statement {
+	font-kerning: none;
+}
+
+.square {
+	position: absolute;
+	z-index: 2;
+	@apply bg-hawk-primary;
+}
+
+.square--top-left {
+	height: 118px;
+	width: 118px;
+	top: 0;
+	left: 0;
+}
+
+.square--top-right {
+	height: 32px;
+	width: 220px;
+	top: 0;
+	right: 0;
+}
+
+.square--bottom-left {
+	height: 32px;
+	width: 320px;
+	bottom: 0;
+	left: 0;
+}
+
+.hero-glitter {
+	position: absolute;
+	z-index: -1;
+}
+
+.hero-glitter--left {
+	left: -25%;
+	top: -10rem;
+	transform: rotate(90deg);
+}
+
+.hero-glitter--right {
+	right: -4rem;
+	top: -2rem;
+}
+
+.cta-glitter {
+	position: absolute;
+	z-index: 0;
+}
+
+.cta-glitter--left {
+	bottom: 0;
+	left: 0;
+}
+
+.cta-glitter--right {
+	top: 0;
+	right: 0;
 }
