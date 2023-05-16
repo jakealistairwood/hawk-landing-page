@@ -20,7 +20,9 @@ const Hero = () => {
                     <HeroGlitter className="hero-glitter hero-glitter--left" />
                     <HeroGlitter className="hero-glitter hero-glitter--right" />
                 </div>
-                <Image src="/images/hero.png" width={1384} height={925} />
+                <div className="relative">
+                    <Image src="/images/hero.png" width={1384} height={925} />
+                </div>
             </div>
         </header>
     )

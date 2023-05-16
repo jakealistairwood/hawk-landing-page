@@ -59,6 +59,7 @@
 h1, h2, h3, h4, h5, h6 {
 	@apply font-archia;
 	@apply font-medium;
+	@apply text-hawk-dark;
 }
 
 .text-h1 {
@@ -163,4 +164,8 @@ p {
 .cta-glitter--right {
 	top: 0;
 	right: 0;
+}
+
+.company-mission__statement {
+	@apply font-medium;
 }

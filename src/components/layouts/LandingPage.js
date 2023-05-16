@@ -70,7 +70,7 @@ const LandingPage = (props) => {
         const missionContainer = missionRef.current;
         const textToAnimate = textRef.current;
 
-        let splitText = new SplitType(textToAnimate, { types: "chars, lines"} );
+        let splitText = new SplitType(textToAnimate, { types: "chars, words"} );
         console.log(splitText);
 
         let chars = gsap.utils.toArray('.char');
@@ -81,7 +81,7 @@ const LandingPage = (props) => {
                 trigger: missionContainer,
                 start: "top 50%",
                 end: "bottom 50%",
-                scrub: 2,
+                scrub: 1,
             }
         })
 
@@ -106,8 +106,8 @@ const LandingPage = (props) => {
             </section>
             <section className="company-mission pb-44" ref={missionRef}>
                 <div className="container w-[1060px]">
-                    <h4 className="text-h3 mb-9">Our mission</h4>
-                    <h2 className="text-6xl company-mission__statement mb-12" ref={textRef}>
+                    <h5 className="text-h3 mb-9">Our mission</h5>
+                    <h2 className="company-mission__statement text-6xl mb-12" ref={textRef}>
                         We're empowering the world's most important organizations to transform Public Safety, protect civil liberties & ensure personal freedom.
                     </h2>
                     <a className="flex items-center gap-2" href="#">
