@@ -4,7 +4,7 @@ import { TestComponent } from "~/components/flexible/TestComponent";
 import { TextCard } from "~/components/elements/text/TextCard";
 
 export function ComponentRenderer({ components = [], pageId = null }) {
-	console.log(components)
+	
 	return (
 		<LayoutGroup>
 			{/* <pre>{JSON.stringify(components, null, 4)}</pre> */}

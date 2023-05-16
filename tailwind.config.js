@@ -16,7 +16,7 @@ module.exports = {
 			'hawk-mid-grey': '#D4DCD8',
 			'hawk-dark': '#1F2725',
 			'hawk-sage-green': '#2C3633',
-			'hawk-primary': "#ffffff"
+			'hawk-primary': "#FFFFFF"
 		},
 		extend: {
 			fontFamily: {

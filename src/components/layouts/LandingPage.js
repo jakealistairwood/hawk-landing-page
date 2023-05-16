@@ -13,9 +13,8 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const LandingPage = (props) => {
+const LandingPage = () => {
 
-    console.log(props)
     const [ trusteeLogos, setTrusteeLogos ] = useState(trustees);
     const [ accordianItems, setAccordianItems ] = useState([]);
 
@@ -46,9 +45,7 @@ const LandingPage = (props) => {
     }
 
     useEffect(() => {
-        console.log("initial render");
         setAccordianItems([...features].map((feature, index) => {
-            console.log(index);
             if(index === 0) {
                 return {
                     ...feature,
@@ -63,7 +60,6 @@ const LandingPage = (props) => {
                 }
             }
         }))
-        console.log("toggled accordian caused rerender")
     }, [])
 
     useEffect(() => {
@@ -71,10 +67,8 @@ const LandingPage = (props) => {
         const textToAnimate = textRef.current;
 
         let splitText = new SplitType(textToAnimate, { types: "chars, words"} );
-        console.log(splitText);
 
         let chars = gsap.utils.toArray('.char');
-        console.log(chars);
 
         let tl = gsap.timeline({
             scrollTrigger: {
@@ -97,7 +91,7 @@ const LandingPage = (props) => {
         <main>
             <Hero />
             <Banner bannerName={"trustees"} sectionTitle={"Trusted by global organisations"} bannerItems={trusteeLogos} />
-            <section className="accordians pb-44">
+            <section className="accordians pb-44 relative" style={{ minHeight: "984px" }}>
                 <div className="container">
                     {accordianItems.map(item => {
                         return <Accordian key={uuidv4()} accordianItem={item} toggleAccordian={toggleAccordian} />

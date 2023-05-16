@@ -34,7 +34,7 @@ export default function Header() {
 
 	return <header className="navbar py-7">
 		<div className="container flex justify-between items-center">
-			<div class="navbar__logo">
+			<div className="navbar__logo">
 				<Image src="/images/logo.svg" height={25} width={125} alt="hawk logo" />
 			</div>
 			<nav className="navbar__nav-links">

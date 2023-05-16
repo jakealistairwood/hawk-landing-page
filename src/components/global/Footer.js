@@ -1,13 +1,9 @@
 import React, { useContext } from "react";
 import Image from "next/image";
 import { footerLinks } from "~/assets/data/footer-links";
-export default function Footer() {
+import { v4 as uuidv4 } from "uuid"
 
-	footerLinks.map(menu => {
-		menu.categories.map(category => {
-			console.log(category)
-		})
-	})
+export default function Footer() {
 
 	return <footer className="footer pt-24 pb-14">
 		<div className="container">
@@ -16,18 +12,18 @@ export default function Footer() {
 			</div>
 			<section className="footer__nav grid grid-cols-4 gap-y-20 pb-24">
 				{footerLinks.map(menu => {
-					return <nav className="footer__nav-menu">
+					return <nav key={uuidv4()} className="footer__nav-menu">
 						{menu.categories.map(category => {
 							return <>
 								{category.href 
-									? <a className="flex items-center gap-2 mb-4" href={category.href}>
+									? <a key={uuidv4()} className="flex items-center gap-2 mb-4" href={category.href}>
 										<span className="font-medium">{category.label}</span>
 										<Image src={"/images/right-arrow.svg"} height={24} width={24} />
 									  </a> 
-									: <h5 className="font-medium font-f37bolton mb-4">{category.label}</h5>}
+									: <h5 key={uuidv4()} className="font-medium font-f37bolton mb-4">{category.label}</h5>}
 								{category.children && <ul className="flex flex-col gap-4">
 									{category.children.map(child => {
-										return <li>
+										return <li key={uuidv4()}>
 											<a className="flex items-center gap-4" href={child.href}>
 												{child.icon && <img src={child.icon} alt={child.label} />}
 												<span className="text-hawk-dark-grey font-normal">{child.label}</span>

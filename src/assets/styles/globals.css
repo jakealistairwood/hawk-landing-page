@@ -62,6 +62,48 @@ h1, h2, h3, h4, h5, h6 {
 	@apply text-hawk-dark;
 }
 
+.btn {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-primary {
+	padding: 1rem 1.5rem;
+	min-width: 130px;
+	height: 56px;
+	border-radius: 4px;
+}
+
+.btn-primary .line {
+	position: absolute;
+	transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .line {
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+.btn-primary .line--one {
+	transform: translateY(0);
+}
+.btn-primary .line--two {
+	transform: translateY(-50px);
+}
+
+.btn-primary:hover .line--one {
+	transform: translateY(50px);
+}
+
+.btn-primary:hover .line--two {
+	transform: translateY(0);
+}
+
+
 .text-h1 {
 	@apply text-6xl;
 }
@@ -94,6 +136,10 @@ body {
 
 .hero-wrapper .text-card {
 	margin-inline: auto;
+}
+
+.hero-wrapper .text-card h1 {
+	font-size: 4.5rem !important;
 }
 
 .cta-block .text-card h2 {
@@ -141,14 +187,14 @@ p {
 }
 
 .hero-glitter--left {
-	left: -25%;
-	top: -10rem;
+	left:  -50%;
+	top: -55%;
 	transform: rotate(90deg);
 }
 
 .hero-glitter--right {
-	right: -4rem;
-	top: -2rem;
+	right: -15rem;
+	top: 0rem;
 }
 
 .cta-glitter {
@@ -166,6 +212,48 @@ p {
 	right: 0;
 }
 
+.hero-image-decor {
+	position: absolute;
+	background-color: white;
+}
+
+.hero-image-decor--top-right {
+	top: 0;
+	right: 0;
+	height: 16px;
+	width: 200px;
+}
+
+.hero-image-decor--bottom-left {
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	width: 160px;
+}
+
 .company-mission__statement {
 	@apply font-medium;
+}
+
+.accordian__content {
+	margin-left: calc(620px + 5rem);
+}
+
+#card-cad-incident {
+	top: 35%;
+	left: 15%;
+	backdrop-filter: blur(5px);
+}
+
+#card-vehicle {
+	bottom: 20%;
+	left: 40%;
+	transform: translateX(-50%);
+	backdrop-filter: blur(5px);
+}
+
+#card-public-cctv {
+	top: 35%;
+	right: 10%;
+	backdrop-filter: blur(5px);
 }
