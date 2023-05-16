@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import { footerLinks } from "~/assets/data/footer-links";
+import footerLinks from "~/assets/data/footer-links";
 import { v4 as uuidv4 } from "uuid"
 
 export default function Footer() {

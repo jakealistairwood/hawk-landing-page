@@ -1,4 +1,4 @@
-export const footerLinks = [
+const footerLinks = [
 	{
 		categories: [
 			{
@@ -214,3 +214,5 @@ export const footerLinks = [
 		],
 	},
 ];
+
+export default footerLinks

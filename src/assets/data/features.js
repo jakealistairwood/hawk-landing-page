@@ -1,4 +1,4 @@
-export const features = [
+const features = [
     {
         label: "Visualize",
         header: "Never miss a thing.",
@@ -33,3 +33,5 @@ export const features = [
         }]
     },
 ]
+
+export default features

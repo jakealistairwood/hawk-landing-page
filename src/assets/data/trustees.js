@@ -1,4 +1,4 @@
-export const trustees = [
+const trustees = [
     {
         title: "NLC",
         imageSrc: "/images/nlc.png",
@@ -30,3 +30,5 @@ export const trustees = [
         href: ""
     },
 ]
+
+export default trustees

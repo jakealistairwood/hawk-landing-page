@@ -1,7 +1,7 @@
 import TextCard from "../text/TextCard"
 import Image from "next/image"
 import HeroGlitter from "../../../../public/images/hero-glitter.svg"
-import ImageOverlayCard from "../image-overlay-card.js/ImageOverlayCard"
+import ImageOverlayCard from "../image-overlay-card/ImageOverlayCard"
 
 const Hero = () => {
     return (

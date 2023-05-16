@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import Banner from "../elements/banner/Banner"
 import Hero from "../elements/hero/Hero"
-import { trustees } from "~/assets/data/trustees"
-import { features } from "~/assets/data/features"
+import trustees from "~/assets/data/trustees"
+import features from "~/assets/data/features"
 import Accordian from "../elements/accordian/Accordian"
 import CtaBlock from "../cta-block/CtaBlock"
 import { v4 as uuidv4 } from "uuid";
@@ -21,7 +21,6 @@ const LandingPage = () => {
     const missionRef = useRef(null);
     const textRef = useRef(null);
 
-    
     const toggleAccordian = (e, accordianIndex) => {
         setAccordianItems(accordianItems.map(feature => {
             if(feature.index == accordianIndex) {
