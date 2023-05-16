@@ -39,7 +39,9 @@ const Accordian = ({ accordianItem, toggleAccordian }) => {
                 overflow: "hidden",
                 border: "1px solid transparent",
         }}>
-            
+            <div className="relative" id={`featureImg${label}`}>
+                <img className="absolute" src={images[0].foregroundImage.src} alt={images[0].foregroundImage.alt} />
+            </div>
         </motion.div>}
         <div className="accordian__content pt-7 pb-6 border-t border-solid border-hawk-mid-grey w-full">
             <button className="accordian__btn" onClick={(e) => {

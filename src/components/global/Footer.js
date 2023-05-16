@@ -10,7 +10,7 @@ export default function Footer() {
 			<div className="footer__logo mb-20">
 				<Image src="/images/logo.svg" height={25} width={125} alt="hawk logo" />
 			</div>
-			<section className="footer__nav grid grid-cols-4 gap-y-20 pb-24">
+			<section className="footer__nav grid gap-x-10 grid-cols-4 gap-y-20 pb-24">
 				{footerLinks.map(menu => {
 					return <nav key={uuidv4()} className="footer__nav-menu">
 						{menu.categories.map(category => {

@@ -7,6 +7,10 @@ const features = [
             bgImage: {
                 src: "/images/map.png",
                 alt: "Map of Malibu"
+            },
+            foregroundImage: {
+                src: "/images/ui.png",
+                alt: "Visualise mobile UI"
             }
         }]
     },
@@ -18,6 +22,10 @@ const features = [
             bgImage: {
                 src: "/images/police.png",
                 alt: "Police car"
+            },
+            foregroundImage: {
+                src: "/images/collaborate-ui.png",
+                alt: "Collaborate mobile UI"
             }
         }]
     },
@@ -29,6 +37,10 @@ const features = [
             bgImage: {
                 src: "/images/helicopter.png",
                 alt: "Helicopter extinguishing bush fires"
+            },
+            foregroundImage: {
+                src: "/images/respond-ui.png",
+                alt: "Respond mobile UI"
             }
         }]
     },

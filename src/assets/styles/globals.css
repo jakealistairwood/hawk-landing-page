@@ -257,3 +257,10 @@ p {
 	right: 10%;
 	backdrop-filter: blur(5px);
 }
+
+#featureImgVisualize,
+#featureImgCollaborate,
+#featureImgRespond {
+	left: 20%;
+	top: 20%;
+}
