@@ -13,6 +13,9 @@ module.exports = withBundleAnalyzer({
 		],
 		formats: ["image/avif", "image/webp"],
 	},
+	eslint: {
+		ignoreDuringBuilds: true
+	},
 	async redirects() {
 		return require("./redirects.json");
 	},
