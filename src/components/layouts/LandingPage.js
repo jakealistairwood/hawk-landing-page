@@ -13,7 +13,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const LandingPage = () => {
+export default function LandingPage() {
 
     const [ trusteeLogos, setTrusteeLogos ] = useState(trustees);
     const [ accordianItems, setAccordianItems ] = useState([]);
@@ -113,5 +113,3 @@ const LandingPage = () => {
         </main>
     )
 }
-
-export default LandingPage
