@@ -1,7 +1,7 @@
 import React from "react";
 import { LayoutGroup } from "framer-motion";
 import { TestComponent } from "~/components/flexible/TestComponent";
-import { TextCard } from "~/components/elements/text/TextCard";
+// import { TextCard } from "~/components/elements/text/TextCard";
 
 export function ComponentRenderer({ components = [], pageId = null }) {
 	

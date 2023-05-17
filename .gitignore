@@ -70,3 +70,4 @@ src/pages/test.js
 .next/
 
 !.gitkeep
+.vercel
