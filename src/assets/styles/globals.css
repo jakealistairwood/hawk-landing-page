@@ -253,6 +253,7 @@ ACCORDIAN SECTION
 	width: 100%;
 	top: 0;
 	overflow: hidden;
+	position: relative;
 }
 
 .accordian__image-overlay {
