@@ -7,7 +7,7 @@ const Hero = () => {
     return (
         <header className="hero">
             <div className="container pt-32">
-                <div className="hero-wrapper flex flex-col items-center relative w-4/5 mx-auto mb-24">
+                <div className="hero-wrapper flex flex-col items-center relative w-full md:w-4/5 mx-auto mb-24">
                     <TextCard
                         heading={"One platform powering better information."} 
                         content={"Hawk empowers Public Safety agencies to make mission-critical decisions in real-time."}

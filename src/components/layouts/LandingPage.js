@@ -90,7 +90,7 @@ export default function LandingPage() {
         <main>
             <Hero />
             <Banner bannerName={"trustees"} sectionTitle={"Trusted by global organisations"} bannerItems={trusteeLogos} />
-            <section className="accordians pb-44 relative" style={{ minHeight: "984px" }}>
+            <section className="accordians pb-16 md:pb-44 relative" style={{ minHeight: "984px" }}>
                 <div className="container">
                     {accordianItems.map(item => {
                         return <Accordian key={uuidv4()} accordianItem={item} toggleAccordian={toggleAccordian} />
@@ -98,9 +98,9 @@ export default function LandingPage() {
                 </div>
             </section>
             <section className="company-mission pb-44" ref={missionRef}>
-                <div className="container w-[1060px]">
-                    <h5 className="text-h3 mb-9">Our mission</h5>
-                    <h2 className="company-mission__statement text-6xl mb-12" ref={textRef}>
+                <div className="container w-[1060px] max-w-full">
+                    <h5 className="text-h4 md:text-h3 mb-9">Our mission</h5>
+                    <h2 className="company-mission__statement text-4xl md:text-6xl mb-12" ref={textRef}>
                         We're empowering the world's most important organizations to transform Public Safety, protect civil liberties & ensure personal freedom.
                     </h2>
                     <a className="flex items-center gap-2" href="#">

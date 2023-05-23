@@ -44,7 +44,8 @@ const Banner = ({ bannerName, sectionTitle, bannerItems }) => {
     return <div className={`banner banner-${bannerName} flex flex-col items-center py-20`}>
         <h4>{sectionTitle}</h4>
         <div className="container">
-            <motion.div ref={itemsRef} variants={staggerItems} animate={controls} initial="hidden" className="banner-items flex justify-between items-center w-full">
+            <motion.div ref={itemsRef} variants={staggerItems} animate={controls} initial="hidden" className="banner-items grid gap-5
+             grid-cols-2 md:grid-cols-3 place-items-center lg:flex flex-wrap justify-between items-center w-full">
                 {bannerItems.map((item, index) => {
                     return <motion.div key={uuidv4()} variants={staggerItems} className="item py-16">
                         <img src={item.imageSrc} alt={item.title} />

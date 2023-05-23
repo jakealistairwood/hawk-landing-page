@@ -14,10 +14,10 @@ const CtaBlock = ({ ctaHeader, bgColor }) => {
                     text_alignment: "center",
                     section_alignment: "center",
                     heading_tag: 'h2',
-                    heading_classes: "text-center w-full text-hawk-primary"
+                    heading_classes: "text-center w-full text-hawk-primary z-10"
                 }}  
                 customButton={{
-                    classNames: "bg-hawk-yellow pt-14 mx-auto btn btn-primary w-max",
+                    classNames: "bg-hawk-yellow pt-14 mx-auto btn btn-primary w-max z-10",
                     buttonText: "Get Started"
                 }}
             />

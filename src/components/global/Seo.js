@@ -34,6 +34,7 @@ export default function Seo({ page = false }) {
 				<link rel="mask-icon" href="/static/images/favicons/safari-pinned-tab.svg" color="#492847" />
 				<meta name="msapplication-TileColor" content="#492847" />
 				<meta name="theme-color" content="#ffffff" />
+				<title>Hawk</title>
 			</Head>
 		</div>
 	);

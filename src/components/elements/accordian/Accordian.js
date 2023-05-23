@@ -7,7 +7,7 @@ const variants = {
         opacity: 0
     },
     open: {
-        height: "784px",
+        height: "100%",
         opacity: 1,
         transition: {
             duration: 0.3
@@ -25,19 +25,14 @@ const Accordian = ({ accordianItem, toggleAccordian }) => {
 
     const { isOpen, images, index, label, header, subheader } = accordianItem;
 
-    return <div className={`accordian ${isOpen ? "accordian--isOpen" : ""} flex gap-28 static`}>
+    return <div className={`accordian ${isOpen ? "accordian--isOpen" : ""} flex flex-col-reverse gap-6 md:flex-row md:gap-28 static`}>
         {accordianItem.images && <motion.div animate={isOpen ? "open" : "closed"} initial="inital" variants={variants}
-            className={`accordian__image absolute`} 
+            className={`accordian__image md:absolute`} 
             style={{
                 backgroundImage: `url(${images[0].bgImage.src})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                maxWidth: '620px',
-                width: '100%',
-                // height: `${isOpen ? "784px" : "0"}`,
-                top: "0",
-                overflow: "hidden",
-                border: "1px solid transparent",
+                // backgroundRepeat: 'no-repeat',
+                // backgroundSize: 'cover',
+                // border: "1px solid transparent",
         }}>
             <div className="relative" id={`featureImg${label}`}>
                 <img className="absolute" src={images[0].foregroundImage.src} alt={images[0].foregroundImage.alt} />
