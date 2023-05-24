@@ -13,7 +13,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function LandingPage() {
+export default function LandingPage({ mobileNavOpen }) {
 
     const [ trusteeLogos, setTrusteeLogos ] = useState(trustees);
     const [ accordianItems, setAccordianItems ] = useState([]);
@@ -90,7 +90,7 @@ export default function LandingPage() {
         <main>
             <Hero />
             <Banner bannerName={"trustees"} sectionTitle={"Trusted by global organisations"} bannerItems={trusteeLogos} />
-            <section className="accordians pb-16 md:pb-44 relative" style={{ minHeight: "984px" }}>
+            <section className="accordians pb-16 lg:pb-44 relative md:min-h-[750px] lg:min-h-[984px]">
                 <div className="container">
                     {accordianItems.map(item => {
                         return <Accordian key={uuidv4()} accordianItem={item} toggleAccordian={toggleAccordian} />
@@ -110,6 +110,7 @@ export default function LandingPage() {
                 </div>
             </section>
             <CtaBlock ctaHeader={"Achieve breakthrough moments."} bgColor={"bg-hawk-sage-green"} />
+            {mobileNavOpen && <div className="overlay"></div>}
         </main>
     )
 }

@@ -8,15 +8,16 @@ import LandingPage from "../layouts/LandingPage";
 
 export function Layout({ data, children }) {
 	const [context, setContext] = useState(data);
+	const [mobileNavOpen, setMobileNavOpen] = useState(false);
 	const { page } = data;
 
 	return (
 		<GlobalContext.Provider value={[context, setContext]}>
 			<PasswordProtect password={page?.post_password}>
 				<Seo page={data?.page} />
-				<Header />
+				<Header mobileNavOpen={mobileNavOpen} setMobileNavOpen={setMobileNavOpen} />
 				{/* <main>{children}</main> */}
-				<LandingPage />
+				<LandingPage mobileNavOpen={mobileNavOpen} />
 				<Footer />
 				<WpHotkey id={page?.ID} />
 			</PasswordProtect>
